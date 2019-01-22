@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
+import "./Nav.css";
+
 const NavBar = props => {
   return (
     <nav>
