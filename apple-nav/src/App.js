@@ -7,13 +7,14 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 
 import appleData from "./Data";
+import SubNavBar from "./components/SubNavBar";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       navItems: ["Mac", "iPad", "iPhone", "Watch", "TV", "Music", "Support"],
-      appleNavData: null
+      appleNavData: []
     };
   }
 
@@ -27,6 +28,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar navItems={this.state.navItems} />
+        <Route
+          path="/:item"
+          render={props => <SubNavBar {...props} appleNavData={appleData} />}
+        />
         <Route exact path="/" component={Home} />
       </div>
     );
