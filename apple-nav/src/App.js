@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+
 import "./App.css";
 
+import NavBar from "./components/NavBar";
+
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      navItems: ["Mac", "iPad", "iPhone", "Watch", "TV", "Music", "Support"]
+    };
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>App</h1>
+        <NavBar navItems={this.state.navItems} />
       </div>
     );
   }
